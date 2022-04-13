@@ -54,6 +54,9 @@ include(GNUInstallDirs)
 
 ## Dependencies ##
 
+set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
+set(THREADS_PREFER_PTHREAD_FLAG TRUE)
+find_package(Threads REQUIRED) # Cover for the SDK not doing find_dependency()
 find_package(anari 0.1.0 REQUIRED)
 set(glm_DIR ${CMAKE_CURRENT_LIST_DIR}/external/glm/lib/cmake/glm)
 find_package(glm REQUIRED)
